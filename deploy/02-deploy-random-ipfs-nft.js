@@ -23,7 +23,7 @@ let tokenUris = [
 	"ipfs://QmZYmH5iDbD6v3U2ixoVAjioSzvWJszDzYdbeCLquGSpVm",
 ];
 
-const FUND_AMOUNT = ethers.utils.parseUnits("0.1");
+const FUND_AMOUNT = ethers.utils.parseUnits("1");
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
 	const { deploy, log } = deployments;
@@ -77,7 +77,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 	log("------------------------");
 	if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
 		log("Verifying...");
-		await verify(basicNft.address, args);
+		await verify(randomIpfsNft.address, args);
 	}
 	log("----------------------------");
 };
