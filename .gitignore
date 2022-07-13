@@ -30,3 +30,12 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# hardhat
+artifacts
+cache
+deployments
+node_modules
+coverage
+coverage.json
+

@@ -2,6 +2,7 @@
 pragma solidity ^0.8.8;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "hardhat/console.sol";
 
 contract BasicNft is ERC721 {
 	string public constant TOKEN_URI =
@@ -18,9 +19,8 @@ contract BasicNft is ERC721 {
 		return s_tokenCounter;
 	}
 
-	function tokenURI(
-		uint256 /* tokenId */
-	) public view override returns (string memory) {
+	function tokenURI(uint256 tokenId) public view override returns (string memory) {
+		console.log("RETURNING URI...");
 		return TOKEN_URI;
 	}
 
